@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>indexpage</title>
+  <script>
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  exportEnabled: true,
+  toolTip: {
+    shared: true
+  },
+  legend:{
+    cursor:"pointer",
+    itemclick: toggleDataSeries
+  },
+  data: [{        
+    type: "spline",        
+    showInLegend: true,
+    dataPoints: [
+      { label: "2018-09-05" , y: 44 },     
+      { label:"2018-09-05", y: 37 },     
+      { label: "2018-09-05", y: 36 },     
+      { label: "2018-09-05", y: 36 },     
+      { label: "2018-09-05", y: 46 },
+      { label: "2018-09-05", y: 46 }
+    ]
+  }, 
+  {        
+    type: "spline",
+    name: "Keyword1",        
+    showInLegend: true,
+    dataPoints: [
+      { label: "2018-09-05" , y: 16 },     
+      { label:"2018-09-05", y: 28 },     
+      { label: "2018-09-05", y: 32 },     
+      { label: "2018-09-05", y: 48 },     
+      { label: "2018-09-05", y: 38 },
+      { label: "2018-09-05", y: 26 }
+    ]
+  },
+  
+  {        
+    type: "spline",  
+    name: "Russia",        
+    showInLegend: true,
+    dataPoints: [
+      { label: "2018-09-05" , y: 26 },     
+      { label:"2018-09-05", y: 32 },     
+      { label: "2018-09-05", y: 28 },     
+      { label: "2018-09-05", y: 22 },     
+      { label: "2018-09-05", y: 20 },
+      { label: "2018-09-05", y: 19 }
+    ]
+  },
+  {        
+    type: "spline",  
+    name: "S Korea",        
+    showInLegend: true,
+    dataPoints: [
+      { label: "2018-09-05" , y: 7 },     
+      { label:"2018-09-05", y: 8 },     
+      { label: "2018-09-05", y: 9 },     
+      { label: "2018-09-05", y: 13 },     
+      { label: "2018-09-05", y: 13 },
+      { label: "2018-09-05", y: 9 }
+    ]
+  },  
+  ]
+});
+chart.render();
+function toggleDataSeries(e) {
+  if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+    e.dataSeries.visible = false;
+  }
+  else {
+    e.dataSeries.visible = true;            
+  }
+  chart.render();
+}
+}
+</script>
+</head>
+<body>
+  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #ff7b25;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    
+    form
+    {
+      background-color: #00001a;
+      width: 100%;
+      height: 500px;
+    }
+    .input-group
+    {
+      float: right;
+      width: 200px;
+    }
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+    .form1
+    {
+      width: 100%;
+      height: 500px;
+      background-color: white;
+    }
+    .glyphicon glyphicon-search
+    {
+      float: right;
+    } 
+    h5
+    {
+      color: white;
+    } 
+    .val1
+    {
+      float: right;
+    }
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>LEADSENSE</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a href="#section1">DASHBOARD</a></li>
+        <li><a href="#section2">ANALYTIC</a></li>
+        <li><a href="#section3">PAID MARKETING</a></li>
+        <li class="active"><a href="#section3">SEO</a></li>
+        <li><a href="#section2">CONTENT</a></li>
+        <li><a href="#section2">LEAD NINJA</a></li>
+      </ul><br>
+    </div>
+    <div class="col-sm-9">
+      <form role="form">
+        <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+          <h5>Keyword Ranks</h5>
+        <h5>Competitors</h5>
+      </div>    
+</form>
+<br><br>
+<br>
+
+      <form class="form1">
+        <h6>Add Keyword<input type="text" name="" value="Enter keyword"></h6>
+        <h6 class="val1">Assign to Group<input type="text" name="" value="GroupOptional"></h6>
+
+
+<table>
+  <tr>
+    <th>keywords</th>
+    <th>poosition</th>
+    <th>Change</th>
+    <th>URL</th>
+  </tr>
+  <tr>
+    <td>3D printing in construction market</td>
+    <td>100+</td>
+    <td>0</td>
+    <td>/research-report/asia-compound</td>
+  </tr>
+  <tr>
+    <td>3D printing in construction market Forecast</td>
+    <td>100+</td>
+    <td>0</td>
+    <td>/research-report/asia-compound</td>
+  </tr>
+  <tr>
+    <td>3D printing in construction market Share</td>
+    <td>18</td>
+    <td>0</td>
+  <td>/research-report/asia-compound</td>
+  </tr>
+  <tr>
+    <td>3D printing in construction market Share</td>
+    <td>34</td>
+    <td>0</td>
+    <td>/research-report/asia-compound</td>
+  </tr>
+  <tr>
+    <td>3D printing in construction market Size</td>
+    <td>72</td>
+    <td>-3</td>
+    <td>/research-report/asia-compound</td>
+  </tr>
+  <tr>
+    <td>Abrasive Markets </td>
+    <td>12</td>
+    <td>81</td>
+    <td>/research-report/asia-compound</td>
+  </tr>
+  <tr>
+    <td>Abrasive Markets Forecast</td>
+    <td>100+</td>
+    <td>79</td>
+    <td>/research-report/asia-compound</td>
+  </tr>
+  <tr>
+    <td>Abrasive Markets Share</td>
+    <td>43</td>
+    <td>-5</td>
+    <td>/research-report/asia-compound</td>
+  </tr>
+</table>
+
+      </form>
+  </div>
+</div>
+</body>
+</html>
